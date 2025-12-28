@@ -1,0 +1,18 @@
+{
+  "id": "/?source=pwa",
+  "name": "Kassel Handwerk+",
+  "short_name": "Handwerk+",
+  "description": "Abo “Mann auf Abruf” in Kassel. DE/UA/RU.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#070b14",
+  "theme_color": "#0b1220",
+  "lang": "de",
+  "orientation": "any",
+  "categories": ["business", "productivity", "utilities"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
