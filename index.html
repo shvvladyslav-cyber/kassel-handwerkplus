@@ -1,54 +1,249 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <title>Handwerk+ — Handyman per Abo | Kassel</title>
-  <meta name="description" content="Handwerk+ in Kassel: zuverlässiger Handyman-Service per Abo. Fixe Preise, transparente Leistungen, geprüfte Partner." />
-
-  <link rel="canonical" href="https://hwerkplus.de/" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Handwerk+ — Handyman per Abo" />
-  <meta property="og:description" content="Zuverlässiger Handyman-Service per Abo in Kassel." />
-  <meta property="og:url" content="https://hwerkplus.de/" />
-  <meta property="og:image" content="https://hwerkplus.de/icons/og-image.png" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Handwerk+ — Handyman per Abo</title>
+  <meta name="description" content="Handwerk+ — schneller, zuverlässiger Handyman-Service per Abo. Anfrage in 1 Klick. Kassel & Umgebung. Skalierbar als Franchise." />
+  <meta name="theme-color" content="#0a0f22" />
+  <meta name="color-scheme" content="dark" />
 
   <!-- PWA -->
-  <link rel="manifest" href="/manifest.json" />
-  <meta name="theme-color" content="#0a0f22" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="/icons/icon-192.png" />
 
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
-  <header>
-    <h1>Handwerk+</h1>
-    <nav>
-      <a href="/">Start</a>
-      <a href="/leistungen.html">Leistungen</a>
-      <a href="/abo.html">Abo</a>
-      <a href="/kontakt.html">Kontakt</a>
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brandMark" aria-hidden="true"></span>
+      <span class="brandText">Handwerk<span class="plus">+</span></span>
+    </a>
+
+    <nav class="nav">
+      <a href="#start">Start</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#abo">Abo</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="chip" href="#franchise">Franchise/Partner</a>
+      <a class="chip" href="#konto">Kundenkonto</a>
+      <a class="chip" href="#admin">Admin</a>
     </nav>
+
+    <div class="actions">
+      <button class="btn ghost" id="btnInstall" type="button">Install</button>
+      <a class="btn primary" href="#kontakt">Jetzt Anfrage</a>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Handyman per Abo</h2>
-      <p>Schnell. Zuverlässig. Transparent. Für Kassel und Umgebung.</p>
-      <button id="installBtn" hidden>App installieren</button>
+  <main class="container">
+    <section id="start" class="hero card">
+      <div class="heroText">
+        <h1>Handwerk<span class="plus">+</span> — Handyman per Abo</h1>
+        <p class="muted">
+          Schnell. Zuverlässig. Transparent. Für Kassel & Umgebung —
+          skalierbar als Franchise.
+        </p>
+
+        <div class="heroCtas">
+          <a class="btn primary" href="#kontakt">Jetzt Anfrage senden</a>
+          <a class="btn ghost" href="#franchise">Partner werden</a>
+        </div>
+
+        <div class="badges">
+          <span class="badge">24–48h Rückmeldung</span>
+          <span class="badge">Fixe Abo-Preise</span>
+          <span class="badge">Geprüfte Partner</span>
+          <span class="badge">Mehrsprachig: DE/UA/RU</span>
+        </div>
+      </div>
+
+      <div class="heroVisual" aria-hidden="true">
+        <div class="glow"></div>
+        <div class="mock">
+          <div class="mockTop"></div>
+          <div class="mockBody">
+            <div class="line w80"></div>
+            <div class="line w60"></div>
+            <div class="line w70"></div>
+            <div class="pillRow">
+              <span class="pill"></span><span class="pill"></span><span class="pill"></span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <section id="leistungen" class="grid">
+      <article class="card">
+        <h2>Leistungen</h2>
+        <ul class="list">
+          <li>Möbelmontage / Reparaturen</li>
+          <li>Bohrarbeiten / Regale / TV-Halter</li>
+          <li>Kleine Sanitär- & Elektro-Checks*</li>
+          <li>Umzugshilfe / Transport*</li>
+          <li>Haushaltsservice & Wartung</li>
+        </ul>
+        <p class="hint">*Nur im gesetzlich zulässigen Rahmen / Partnernetzwerk.</p>
+      </article>
+
+      <article class="card">
+        <h2>So funktioniert’s</h2>
+        <ol class="list">
+          <li>Kurze Anfrage senden</li>
+          <li>Wir klären Umfang & Termin</li>
+          <li>Fixpreis/Monatspaket bestätigen</li>
+          <li>Ausführung + Bericht</li>
+        </ol>
+      </article>
+
+      <article class="card">
+        <h2>Warum Abo?</h2>
+        <ul class="list">
+          <li>Planbare Kosten</li>
+          <li>Priorisierte Termine</li>
+          <li>Transparente Leistungen</li>
+          <li>Ideal für Familien & Vermieter</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="abo" class="card">
+      <h2>Abo-Modelle</h2>
+      <div class="pricing">
+        <div class="priceCard">
+          <h3>Standard</h3>
+          <p class="muted">Für kleine Aufgaben</p>
+          <ul class="list">
+            <li>1 Termin/Monat</li>
+            <li>Basis-Support</li>
+            <li>Fixe Preise</li>
+          </ul>
+          <a class="btn ghost" href="#kontakt">Anfragen</a>
+        </div>
+
+        <div class="priceCard featured">
+          <div class="tag">Beliebt</div>
+          <h3>Premium</h3>
+          <p class="muted">Für Haushalt & Alltag</p>
+          <ul class="list">
+            <li>2 Termine/Monat</li>
+            <li>Priorität</li>
+            <li>Partnernetzwerk</li>
+          </ul>
+          <a class="btn primary" href="#kontakt">Anfragen</a>
+        </div>
+
+        <div class="priceCard">
+          <h3>VIP</h3>
+          <p class="muted">Maximum & schnelle Hilfe</p>
+          <ul class="list">
+            <li>4 Termine/Monat</li>
+            <li>Express-Slots</li>
+            <li>Erweiterte Leistungen</li>
+          </ul>
+          <a class="btn ghost" href="#kontakt">Anfragen</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="franchise" class="card">
+      <h2>Franchise/Partner</h2>
+      <p class="muted">
+        Du bist Handwerker oder hast ein Team? Werde Partner und arbeite über Handwerk+ mit klaren Aufträgen,
+        Standards und Abrechnung.
+      </p>
+      <div class="row">
+        <a class="btn ghost" href="#kontakt">Partner-Anfrage</a>
+        <span class="hint">Wir starten in Kassel — skalierbar in andere Städte.</span>
+      </div>
+    </section>
+
+    <section id="konto" class="card">
+      <h2>Kundenkonto</h2>
+      <p class="muted">Platzhalter: Hier kommt später Login, Abo-Verwaltung, Rechnungen, Termine.</p>
+      <div class="row">
+        <button class="btn ghost" type="button" disabled>Login (coming soon)</button>
+        <button class="btn ghost" type="button" disabled>Meine Aufträge</button>
+      </div>
+    </section>
+
+    <section id="admin" class="card">
+      <h2>Admin</h2>
+      <p class="muted">Platzhalter: Admin-Bereich (Leads, Status, Partner, Preise).</p>
+      <button class="btn ghost" type="button" disabled>Admin öffnen (coming soon)</button>
+    </section>
+
+    <section id="kontakt" class="card">
+      <h2>Kontakt / Anfrage</h2>
+      <p class="muted">Schreib kurz, was du brauchst (Ort, Aufgabe, Wunschzeit).</p>
+
+      <form class="form" id="leadForm">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" placeholder="Max Mustermann" autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="phone">Telefon</label>
+          <input id="phone" name="phone" placeholder="+49…" autocomplete="tel" />
+        </div>
+        <div class="field">
+          <label for="msg">Nachricht</label>
+          <textarea id="msg" name="msg" rows="4" placeholder="Kurze Beschreibung…"></textarea>
+        </div>
+        <div class="row">
+          <button class="btn primary" type="submit">Senden</button>
+          <span class="hint">Noch ohne Backend — отправка имитируется, позже подключим Telegram/CRM.</span>
+        </div>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <div class="footerLeft">
+        <span class="brandText">Handwerk<span class="plus">+</span></span>
+        <span class="muted">© <span id="year"></span></span>
+      </div>
+      <div class="footerLinks">
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+        <a href="/agb.html">AGB</a>
+      </div>
+    </footer>
   </main>
 
-  <footer>
-    <a href="/impressum.html">Impressum</a> ·
-    <a href="/datenschutz.html">Datenschutz</a> ·
-    <a href="/agb.html">AGB</a>
-  </footer>
+  <script src="/sw.js" defer></script>
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  <script src="/app.js"></script>
+    // fake submit
+    document.getElementById('leadForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Danke! Anfrage erhalten. (Demo)');
+      e.target.reset();
+    });
+
+    // PWA install
+    let deferredPrompt = null;
+    const btnInstall = document.getElementById('btnInstall');
+    btnInstall.style.display = 'none';
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      btnInstall.style.display = 'inline-flex';
+    });
+
+    btnInstall.addEventListener('click', async () => {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      btnInstall.style.display = 'none';
+    });
+  </script>
 </body>
 </html>
