@@ -126,3 +126,91 @@ a{color:inherit}
 /* Language switch */
 .langbtn{min-width:44px;}
 .langbtn.is-active{background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.30);}
+/* ===== MOBILE FIX ===== */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 15px;
+  }
+
+  .top__inner {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav {
+    display: none; /* скрываем desktop-меню */
+  }
+
+  .top__actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .cta {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .wrap {
+    padding: 84px 14px 20px;
+  }
+
+  .hero__card {
+    padding: 18px;
+  }
+
+  .h1 {
+    font-size: 28px;
+  }
+
+  .lead {
+    font-size: 14px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* ОДНА колонка */
+  }
+
+  .tiers {
+    grid-template-columns: 1fr;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__buttons {
+    flex-direction: column;
+  }
+
+  .btn,
+  .cta,
+  .chip {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .badges {
+    gap: 6px;
+  }
+
+  .badge {
+    font-size: 11.5px;
+    padding: 6px 8px;
+  }
+
+  .footer__grid {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+}
+
+
+
+
+
+
+
+
