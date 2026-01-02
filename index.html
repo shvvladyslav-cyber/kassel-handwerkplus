@@ -26,7 +26,14 @@
         </div>
       </a>
 
-      <button class="menuToggle" id="btnMenu" type="button" aria-expanded="false" aria-controls="mainMenu" title="Menu" aria-label="Menu">☰</button>
+      <div class="navRight">
+        <div class="langbar" role="group" aria-label="Language">
+          <button class="langchip" type="button" data-set-lang="de" aria-pressed="false">DE</button>
+          <button class="langchip" type="button" data-set-lang="uk" aria-pressed="false">UA</button>
+          <button class="langchip" type="button" data-set-lang="ru" aria-pressed="false">RU</button>
+        </div>
+        <button class="menuToggle" id="btnMenu" type="button" aria-expanded="false" aria-controls="mainMenu" title="Menu" aria-label="Menu">☰</button>
+      </div>
 
       <nav class="pills" id="mainMenu" aria-label="Navigation">
         <a class="pill" href="#start" data-scroll="start" data-i18n="nav.start">Start</a>
@@ -37,12 +44,7 @@
         <a class="pill" href="/cabinet/" title="Kundenkonto (optional)" data-i18n="nav.account">Kundenkonto</a>
         <a class="pill" href="/admin/" title="Admin (optional)" data-i18n="nav.admin">Admin</a>
         <button class="pill" id="btnInstall" style="display:none" type="button" data-i18n="nav.install">Install</button>
-        <div class="lang" role="group" aria-label="Language">
-          <button class="pill langbtn" type="button" data-set-lang="de">DE</button>
-          <button class="pill langbtn" type="button" data-set-lang="uk">UA</button>
-          <button class="pill langbtn" type="button" data-set-lang="ru">RU</button>
-        </div>
-        <a class="pill primary" href="#kontakt" data-scroll="kontakt" data-i18n="nav.cta">Jetzt Anfrage</a>
+        <a class="pill pill-accent" href="#kontakt" data-scroll="kontakt" data-i18n="nav.cta">Jetzt Anfrage</a>
       </nav>
     </header>
 
