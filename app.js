@@ -103,8 +103,12 @@
     // set <html lang="">
     document.documentElement.setAttribute("lang", lang === "uk" ? "uk" : (lang === "ru" ? "ru" : "de"));
 
-    // update active button
-    $$("[data-set-lang]").forEach(b => b.classList.toggle("active", b.getAttribute("data-set-lang") === lang));
+    // update active language buttons
+    $$("[data-set-lang]").forEach(b => {
+      const isOn = b.getAttribute("data-set-lang") === lang;
+      b.classList.toggle("is-active", isOn);
+      b.setAttribute("aria-pressed", isOn ? "true" : "false");
+    });
 
     // translate nodes
     $$("[data-i18n]").forEach(el => {
@@ -113,15 +117,7 @@
       if (typeof val === "string") el.textContent = val;
     });
 
-    try { localStorage.setItem("hp_lang", lang);
-
-    // highlight active language button
-    $$("[data-set-lang]").forEach(b => {
-      const isOn = b.getAttribute("data-set-lang") === lang;
-      b.classList.toggle("is-active", isOn);
-      b.setAttribute("aria-pressed", isOn ? "true" : "false");
-    });
- } catch {}
+    try { localStorage.setItem("hp_lang", lang); } catch {}
   }
 
   function initLang() {
@@ -145,6 +141,51 @@
         el.scrollIntoView({ behavior: "smooth", block: "start" });
         history.replaceState(null, "", `#${target}`);
       });
+    });
+  }
+
+  // ---------- Mobile menu ----------
+  function initMenu() {
+    const btn = $("#btnMenu");
+    const menu = $("#mainMenu");
+    if (!btn || !menu) return;
+
+    const close = () => {
+      menu.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+    };
+
+    const toggle = () => {
+      const isOpen = menu.classList.toggle("open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    };
+
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      toggle();
+    });
+
+    // close when clicking any menu item
+    menu.addEventListener("click", (e) => {
+      const t = e.target;
+      if (!(t instanceof HTMLElement)) return;
+      if (t.closest("a") || t.closest("button")) {
+        // allow click to proceed, but close menu (esp. on mobile)
+        setTimeout(close, 0);
+      }
+    });
+
+    // close on outside click
+    document.addEventListener("click", (e) => {
+      const t = e.target;
+      if (!(t instanceof HTMLElement)) return;
+      if (t === btn || btn.contains(t) || menu.contains(t)) return;
+      close();
+    });
+
+    // close when resizing to desktop
+    window.addEventListener("resize", () => {
+      if (window.matchMedia("(min-width: 821px)").matches) close();
     });
   }
 
@@ -174,13 +215,17 @@
   function initSW() {
     if (!("serviceWorker" in navigator)) return;
     window.addEventListener("load", () => {
-      navigator.serviceWorker.register("/sw.js").catch(() => {});
+      navigator.serviceWorker.register("/sw.js").then((reg) => {
+        // Ask the browser to check for SW updates (helps with cached old bundles)
+        try { reg.update(); } catch {}
+      }).catch(() => {});
     });
   }
 
   // boot
   document.addEventListener("DOMContentLoaded", () => {
     initLang();
+    initMenu();
     initScroll();
     initInstall();
     initSW();

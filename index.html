@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>Handwerk+ — Handyman per Abo (Deutschland)</title>
   <meta name="description" content="Handwerk+ in Deutschland: Handyman per Abo. Schnell. Zuverlässig. Transparent. Für Kassel & Umgebung — skalierbar als Franchise." />
   <meta name="theme-color" content="#0a0f22" />
@@ -17,7 +17,7 @@
 </head>
 <body>
   <div class="container">
-    <header class="nav">
+    <header class="nav" id="top">
       <a class="brand" href="/" aria-label="Handwerk+">
         <div class="logo" aria-hidden="true"></div>
         <div class="title">
@@ -26,7 +26,9 @@
         </div>
       </a>
 
-      <nav class="pills" aria-label="Navigation">
+      <button class="pill menuToggle" id="btnMenu" type="button" aria-expanded="false" aria-controls="mainMenu" title="Menu">☰</button>
+
+      <nav class="pills" id="mainMenu" aria-label="Navigation">
         <a class="pill" href="#start" data-scroll="start" data-i18n="nav.start">Start</a>
         <a class="pill" href="#leistungen" data-scroll="leistungen" data-i18n="nav.services">Leistungen</a>
         <a class="pill" href="#abo" data-scroll="abo" data-i18n="nav.abo">Abo</a>
