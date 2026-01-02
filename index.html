@@ -22,38 +22,43 @@
         <div class="logo" aria-hidden="true"></div>
         <div class="title">
           <b>Handwerk+</b>
-          <span>Handyman per Abo</span>
+          <span data-i18n="brand.tagline">Handyman per Abo</span>
         </div>
       </a>
 
       <nav class="pills" aria-label="Navigation">
-        <a class="pill" href="#start" data-scroll="start">Start</a>
-        <a class="pill" href="#leistungen" data-scroll="leistungen">Leistungen</a>
-        <a class="pill" href="#abo" data-scroll="abo">Abo</a>
-        <a class="pill" href="#kontakt" data-scroll="kontakt">Kontakt</a>
-        <a class="pill" href="#partner" data-scroll="partner">Franchise/Partner</a>
-        <a class="pill" href="/cabinet/" title="Kundenkonto (optional)">Kundenkonto</a>
-        <a class="pill" href="/admin/" title="Admin (optional)">Admin</a>
-        <button class="pill" id="btnInstall" style="display:none" type="button">Install</button>
-        <a class="pill primary" href="#kontakt" data-scroll="kontakt">Jetzt Anfrage</a>
+        <a class="pill" href="#start" data-scroll="start" data-i18n="nav.start">Start</a>
+        <a class="pill" href="#leistungen" data-scroll="leistungen" data-i18n="nav.services">Leistungen</a>
+        <a class="pill" href="#abo" data-scroll="abo" data-i18n="nav.abo">Abo</a>
+        <a class="pill" href="#kontakt" data-scroll="kontakt" data-i18n="nav.contact">Kontakt</a>
+        <a class="pill" href="#partner" data-scroll="partner" data-i18n="nav.partner">Franchise/Partner</a>
+        <a class="pill" href="/cabinet/" title="Kundenkonto (optional)" data-i18n="nav.account">Kundenkonto</a>
+        <a class="pill" href="/admin/" title="Admin (optional)" data-i18n="nav.admin">Admin</a>
+        <button class="pill" id="btnInstall" style="display:none" type="button" data-i18n="nav.install">Install</button>
+        <div class="lang" role="group" aria-label="Language">
+          <button class="pill langbtn" type="button" data-set-lang="de">DE</button>
+          <button class="pill langbtn" type="button" data-set-lang="uk">UA</button>
+          <button class="pill langbtn" type="button" data-set-lang="ru">RU</button>
+        </div>
+        <a class="pill primary" href="#kontakt" data-scroll="kontakt" data-i18n="nav.cta">Jetzt Anfrage</a>
       </nav>
     </header>
 
     <main>
       <section id="start" class="hero">
-        <h1>Handwerk+ — Handyman per Abo</h1>
-        <p>Schnell. Zuverlässig. Transparent. Für Kassel &amp; Umgebung — skalierbar als Franchise.</p>
+        <h1 data-i18n="hero.title">Handwerk+ — Handyman per Abo</h1>
+        <p data-i18n="hero.subtitle">Schnell. Zuverlässig. Transparent. Für Kassel &amp; Umgebung — skalierbar als Franchise.</p>
 
         <div class="cta">
-          <a class="pill primary" href="#kontakt" data-scroll="kontakt">Jetzt Anfrage senden</a>
-          <a class="pill" href="#partner" data-scroll="partner">Partner werden</a>
+          <a class="pill primary" href="#kontakt" data-scroll="kontakt" data-i18n="hero.btn_request">Jetzt Anfrage senden</a>
+          <a class="pill" href="#partner" data-scroll="partner" data-i18n="hero.btn_partner">Partner werden</a>
         </div>
 
         <div class="badges" aria-label="Highlights">
-          <div class="badge">24–48h Rückmeldung</div>
-          <div class="badge">Fixe Abo-Preise</div>
-          <div class="badge">Geprüfte Partner</div>
-          <div class="badge">Mehrsprachig: DE/UA/RU</div>
+          <div class="badge" data-i18n="badges.reply">24–48h Rückmeldung</div>
+          <div class="badge" data-i18n="badges.prices">Fixe Abo-Preise</div>
+          <div class="badge" data-i18n="badges.verified">Geprüfte Partner</div>
+          <div class="badge" data-i18n="badges.langs">Mehrsprachig: DE/UA/RU</div>
         </div>
       </section>
 
@@ -120,11 +125,11 @@
       <section id="kontakt" class="section">
         <div class="grid">
           <div class="card" style="grid-column:span 12">
-            <h3>Kontakt</h3>
-            <p>Schreib uns kurz, was du brauchst. (Die Formulare/CRM kannst du später über Apps Script aktivieren.)</p>
+            <h3 data-i18n="sec.contact">Kontakt</h3>
+            <p data-i18n="contact.text">Schreib uns kurz, was du brauchst. (Die Formulare/CRM kannst du später über Apps Script aktivieren.)</p>
             <div class="cta" style="margin-top:12px">
-              <a class="pill primary" href="https://t.me/uhu.help" target="_blank" rel="noopener">Jetzt in Telegram</a>
-              <a class="pill" href="mailto:k2camperbox@gmail.com">E-Mail senden</a>
+              <a class="pill primary" href="https://t.me/uhu.help" target="_blank" rel="noopener" data-i18n="contact.telegram">Jetzt in Telegram</a>
+              <a class="pill" href="mailto:k2camperbox@gmail.com" data-i18n="contact.email">E-Mail senden</a>
             </div>
           </div>
         </div>
@@ -133,9 +138,9 @@
       <footer class="footer">
         <div>© <span id="y"></span> Handwerk+</div>
         <div>
-          <a href="/legal/impressum.html">Impressum</a> ·
-          <a href="/legal/datenschutz.html">Datenschutz</a> ·
-          <a href="/legal/agb.html">AGB</a>
+          <a href="/legal/impressum.html" data-i18n="legal.impressum">Impressum</a> ·
+          <a href="/legal/datenschutz.html" data-i18n="legal.datenschutz">Datenschutz</a> ·
+          <a href="/legal/agb.html" data-i18n="legal.agb">AGB</a>
         </div>
       </footer>
     </main>
@@ -143,6 +148,6 @@
 
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
   <script src="/config.js"></script>
-  <script src="/app.js"></script>
+  <script src="/app.js" defer></script>
 </body>
 </html>
